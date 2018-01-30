@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Mitter.com</title>
+</head>
+    
+<body>
+    <script>
+        function startProcess(){            
+            //alert("StartProcess");
+            var i = 0 ;
+            var volumeSize;
+           
+            while ( i < 10)
+            {
+            var width = i + 2;
+            var height = i + 2;
+            var length = i + 2;
+                
+           
+                 
+            var myVolume = getVolume(length, width, height);
+             
+            if (myVolume >= 60 && myVolume < 70) {
+                volumeSize = 'small';
+            }
+            else if (myVolume >= 80 && myVolume < 90) {
+                volumeSize = 'medium';
+            }
+            else if (myVolume >= 100 && myVolume < 120) {
+                volumeSize = 'large';
+            }
+            else 
+            { 
+                volumeSize = 'misc';
+            }
+                
+                
+                
+                switch(volumeSize) {
+                        
+                    case 'small':                        
+                        msg = ("You have small volume" + myVolume);
+                        break;
+                        
+                    case 'medium':
+                        msg = ("You have medium volume" + myVolume);
+                        break;
+                        
+                    case 'large':
+                        msg = (" You have large volume" + myVolume);
+                        break;
+                        
+                    case 'misc':
+                        msg = ("You have misc volume" + myVolume);
+                        break;
+                        
+                    default: 
+                        msg = ("Hello" + myVolume);
+                        break;              
+            }
+                document.write(msg + "<br/>");
+                i++;
+                    }
+                }
+            
+        
+        
+        function getVolume(length, width, height){
+            var result = length * width * height;
+            return result;            
+        }
+        
+        //alert("hit");
+        startProcess();
+    </script>
+
+
+
+</body>
+</html>
